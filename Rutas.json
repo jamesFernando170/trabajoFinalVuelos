@@ -1,8 +1,8 @@
 [
-    {"1":[{"origen":"Manizales","destino":"Bogota","duracion":2,"precio":100000.0},{"origen":"Bogota","destino":"Barranquilla","duracion":3.5,"precio":290000.0}]},
-    {"2":[{"origen":"Medellin","destino":"Pereira","duracion":0.5,"precio":60000.0},{"origen":"Pereira","destino":"Santa Marta","duracion": 2.5,"precio":210000.0}]},
-    {"3":[{"origen":"Manizales","destino":"Medellin","duracion":1.5,"precio":96000.0}]},
-    {"4":[{"origen":"Cali","destino":"Bucaramanga","duracion":2,"precio":130000.0}]},
+    {"1":[{"origen":"Ibague","destino":"Bucaramanga","duracion":2,"precio":100000.0},{"origen":"Bucaramanga","destino":"Cartagena","duracion":3.5,"precio":290000.0}]},
+    {"2":[{"origen":"PuertoIniria","destino":"Villavencio","duracion":0.5,"precio":60000.0},{"origen":"Villavencio","destino":"Quindio","duracion": 2.5,"precio":210000.0}]},
+    {"3":[{"origen":"Puenes","destino":"Cucuta","duracion":1.5,"precio":96000.0}]},
+    {"4":[{"origen":"Cucuta","destino":"Ipiales","duracion":2,"precio":130000.0}]},
     {"5":[{"origen":"Pasto","destino":"Pereira","duracion":1.5,"precio":120000.0},{"origen":"Pereira","destino":"Cartagena","duracion":3.5,"precio":300000.0}]},
     {"6":[{"origen":"Dorada","destino":"Pensilvania","duracion":0.5,"precio":60000.0},{"origen":"Pensilvania","destino":"Buenaventura","duracion": 2.5,"precio":210000.0}]},
     {"7":[{"origen":"Tulua","destino":"Medellin","duracion":1.5,"precio":96000.0}]},

@@ -5,14 +5,13 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-
 import Entidades.Ruta;
 import Entidades.Vuelo;
 
 public class ControlVuelo {
     private List<Vuelo> vuelos;
     private List<Ruta> rutasLista;
-    //ControlRutas controlRutas = new ControlRutas();
+    // ControlRutas controlRutas = new ControlRutas();
 
     public ControlVuelo() {
         vuelos = new ArrayList<>();
@@ -49,13 +48,10 @@ public class ControlVuelo {
 
         String origen;
         String destino;
-        double duracion;
-        double precio;
         boolean conEscala = false;
 
         for (List<Ruta> rutas : rutasVuelos) {
-            duracion = calcularDuracion(rutas);
-            precio = calcularPrecio(rutas);
+
             if (rutas.size() == 2) {
                 origen = rutas.get(0).getOrigen();
                 destino = rutas.get(1).getDestino();
@@ -64,10 +60,11 @@ public class ControlVuelo {
                 origen = rutas.get(0).getOrigen();
                 destino = rutas.get(0).getDestino();
             }
-            Vuelo vuelo = new Vuelo(origen, destino, precio, duracion, conEscala);
+            Vuelo vuelo = new Vuelo(origen, destino, conEscala);
 
             vuelo.agregarRuta(rutas);
-
+            vuelo.calcularDuracion();
+            vuelo.calcularPrecio();
             vuelos.add(vuelo);
         }
     }
@@ -89,22 +86,13 @@ public class ControlVuelo {
         return null;
     }
 
-    /* Metodo encargado de calcular el precio apartir de la lista de rutas */
-    public double calcularPrecio(List<Ruta> rutas) {
-        double precio = 0;
-        for (Ruta ruta : rutas) {
-            precio += ruta.getPrecio();
-        }
-        return precio;
-    }
-
     /*
      * Metodo encargado de crear vuelos apartir de las rutas y ademas busca las
      * rutas con el buscarRutas que
      * recibe una ruta
      */
     public void crearNuevoVuelo(List<Ruta> rutas) {
-        //ControlRutas controlRutas = new ControlRutas();
+        // ControlRutas controlRutas = new ControlRutas();
         for (int i = 0; i < rutas.size(); i++) {
             Ruta ruta = buscarRuta(rutas.get(i));
 
@@ -126,15 +114,6 @@ public class ControlVuelo {
             }
         }
         return null;
-    }
-
-    /* Metodo encargado de calcular la duracion de cada una de las rutas */
-    public double calcularDuracion(List<Ruta> rutas) {
-        double duracion = 0;
-        for (Ruta ruta : rutas) {
-            duracion += ruta.getDuracion();
-        }
-        return duracion;
     }
 
     /*

@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 import org.json.simple.parser.ParseException;
 
 import Control.ControlVuelo;
@@ -12,17 +14,14 @@ import Entidades.Vuelo;
 
 public class principal {
     static Scanner in = new Scanner(System.in);
+
     public static void main(String[] args) throws java.text.ParseException, ParseException {
-        String rutaArchivo = "Vuelos.json";
+        String rutaArchivo = "Rutas.json";
+
         ControlVuelo controlVuelos = new ControlVuelo();
 
-        System.out.println("Ingrese la ciudad de origen: ");
-        String origen = in.next();
-        System.out.println("\n");
-
-        System.out.println("Ingrese la ciudad de destino: ");
-        String destino = in.next();
-        System.out.println("\n");
+        String origen = JOptionPane.showInputDialog(null, "Ingrese la ciudad Origen");
+        String destino = JOptionPane.showInputDialog(null, "Ingrese la ciudad destino");
 
         System.out.println("Vuelos posibles: ");
         try {

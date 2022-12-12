@@ -11,11 +11,11 @@ public class Vuelo {
     private boolean escala;
     private List<Ruta> rutas;
 
-    public Vuelo(String origen, String destino, double precio, double duracion2, boolean escala) {
+    public Vuelo(String origen, String destino, boolean escala) {
         this.origen = origen;
         this.destino = destino;
-        this.precio = precio;
-        this.duracion = duracion2;
+        this.precio = 0;
+        this.duracion = 0;
         this.escala = escala;
         this.rutas = new ArrayList<Ruta>();
     }
@@ -32,6 +32,10 @@ public class Vuelo {
         return duracion;
     }
 
+    public void setDuracion(double duracion) {
+        this.duracion = duracion;
+    }
+
     public double getPrecio() {
         return precio;
     }
@@ -40,9 +44,24 @@ public class Vuelo {
         return escala;
     }
 
+    // Metodo encargado de agregar una ruta mediante las rutas
     public void agregarRuta(List<Ruta> rutas) {
-        for (Ruta ruta : this.rutas) {
-            rutas.add(ruta);
+        for (Ruta ruta : rutas) {
+            this.rutas.add(ruta);
+        }
+    }
+
+    /* Metodo encargado de calcular la duracion de cada una de las rutas */
+    public void calcularDuracion() {
+        for (Ruta ruta : rutas) {
+            this.duracion += ruta.getDuracion();
+        }
+    }
+
+    /* Metodo encargado de calcular el precio apartir de la lista de rutas */
+    public void calcularPrecio() {
+        for (Ruta ruta : rutas) {
+            precio += ruta.getPrecio();
         }
     }
 
