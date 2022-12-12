@@ -25,7 +25,7 @@ public class principal {
 
         System.out.println("Vuelos posibles: ");
         try {
-            controlVuelos.crearVuelos(rutaArchivo);
+            controlVuelos.cargarDatosIniciales(rutaArchivo);
             for (Vuelo vuelo : controlVuelos.obtenerVuelosSolicitados(origen, destino)) {
                 System.out.println(vuelo);
             }

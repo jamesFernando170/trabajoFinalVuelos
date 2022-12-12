@@ -41,7 +41,7 @@ public class ControlVuelo {
     }
 
     /** Metodo encargado de crear vuelos aparte de la ruta del archivo */
-    public void crearVuelos(String rutaArchivo)
+    public void cargarDatosIniciales(String rutaArchivo)
             throws FileNotFoundException, ParseException, IOException, org.json.simple.parser.ParseException {
 
         List<List<Ruta>> rutasVuelos = cargarDatos(rutaArchivo);
