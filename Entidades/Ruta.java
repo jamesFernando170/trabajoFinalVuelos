@@ -4,13 +4,13 @@ public class Ruta {
     private String origen;
     private String destino;
     private double precio;
-    private int duracion;
+    private double duracion;
 
-    public Ruta(String origen, String destino, double precio, int duracion) {
+    public Ruta(String origen, String destino, double precio, double d) {
         this.origen = origen;
         this.destino = destino;
         this.precio = precio;
-        this.duracion = duracion;
+        this.duracion = d;
     }
 
     public String getOrigen() {
@@ -21,7 +21,17 @@ public class Ruta {
         return destino;
     }
 
-    public int getDuracion() {
+    public double getDuracion() {
         return duracion;
     }    
+
+    public double getPrecio(){
+        return this.precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Ruta [origen=" + origen + ", destino=" + destino + ", precio=" + precio + ", duracion=" + duracion
+                + "]";
+    }
 }
